@@ -9,11 +9,16 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import { useMemo } from "react";
+
+const sum = (scores: number[]) => scores.reduce((acc, score) => acc + score, 0)
 
 export default function Scores() {
   const status = useScoreStatus()
   const scores = useScores()
   useScoresFetch()
+
+  const sortedScores = useMemo(() => [...scores.sort((a, b) => sum(b.score) - sum(a.score))], [scores])
 
   return (
     <Page>
@@ -37,7 +42,7 @@ export default function Scores() {
               <TableRow>
                 <TableCell colSpan={8}>Loading...</TableCell>
               </TableRow>
-            ) : scores.map((score) => (
+            ) : sortedScores.map((score, index) => (
               <TableRow
                 key={score.id}
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
@@ -46,14 +51,14 @@ export default function Scores() {
                   {score.id}
                 </TableCell>
                 <TableCell>
-                  {score.name}
+                  {score.name || '-'}
                 </TableCell>
-                <TableCell align="right">{score.score[0]}</TableCell>
-                <TableCell align="right">{score.score[1]}</TableCell>
-                <TableCell align="right">{score.score[2]}</TableCell>
-                <TableCell align="right">{score.score[3]}</TableCell>
+                <TableCell align="right">{score.score[0] || 0}</TableCell>
+                <TableCell align="right">{score.score[1] || 0}</TableCell>
+                <TableCell align="right">{score.score[2] || 0}</TableCell>
+                <TableCell align="right">{score.score[3] || 0}</TableCell>
                 <TableCell align="right">{score.summary.toFixed(1)}</TableCell>
-                <TableCell align="right">{score.rank}</TableCell>
+                <TableCell align="right">{index + 1}</TableCell>
               </TableRow>
             ))}
           </TableBody>

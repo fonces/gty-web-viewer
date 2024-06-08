@@ -20,6 +20,16 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
 type ViewType = 'all' | 'no'
+const TABLE_MAP = {
+  1: 'A',
+  2: 'B',
+  3: 'C',
+  4: 'D',
+  5: 'E',
+  6: 'F',
+  7: 'G',
+} as const
+type TableMapKey = keyof typeof TABLE_MAP
 
 export default function Tables() {
   const status = useTableStatus()
@@ -96,7 +106,7 @@ export default function Tables() {
           <Box sx={{ display: 'grid', gap: '24px' }}>
             {tables.map((table) => (
               <Box>
-                <Typography variant="h5" gutterBottom>{table}卓</Typography>
+                <Typography variant="h5" gutterBottom>{TABLE_MAP[table as TableMapKey]}卓</Typography>
                 <TableContainer component={Paper}>
                   <Table aria-label="simple table">
                     <TableHead>
@@ -145,7 +155,7 @@ export default function Tables() {
                         sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                       >
                         <TableCell align="center">{index + 1}回戦</TableCell>
-                        <TableCell align="center">{findRound.table}</TableCell>
+                        <TableCell align="center">{TABLE_MAP[findRound.table as TableMapKey]}</TableCell>
                         <TableCell align="center">{['東', '南', '西', '北'][findRound.position]}</TableCell>
                       </TableRow>
                     )

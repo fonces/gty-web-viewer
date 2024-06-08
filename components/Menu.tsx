@@ -32,8 +32,8 @@ const items = [
     icon: <AppRegistrationIcon />,
   },
   {
-    name: 'アーカイブ',
-    path: '/archive',
+    name: 'ギャラリー',
+    path: '/gallery',
     icon: <InsertPhotoIcon />,
   },
 ]

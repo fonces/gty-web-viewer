@@ -1,6 +1,6 @@
 import { Score } from "@/hooks/scores"
 
-const ENDPOINT = 'https://script.google.com/macros/s/AKfycbzfZ2-UIaWqBmhjlGyC-XLh5lPpSaapYI4Wbxf_t9Z08EqmRdeyTTsgBiy1V2V2yAHXWQ/exec'
+const ENDPOINT = 'https://script.google.com/macros/s/AKfycbw0g8WCegInxaALa0WvcXKdQxY7E_9fh-2aoZbPnj9xWVYO0s3nFnhBSJFlSIrVqEanIg/exec'
 
 export default async function getScores(): Promise<Score[]> {
   return await fetch(ENDPOINT)

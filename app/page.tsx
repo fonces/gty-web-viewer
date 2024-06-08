@@ -195,7 +195,7 @@ export default function Readme() {
           <div>
             <Typography variant="h5" gutterBottom>参加人数</Typography>
             <Typography variant="body1" sx={{ ml: 1 }}>
-              24人(内ゲスト3名)
+              28人(内ゲスト3名)
             </Typography>
           </div>
           <div>

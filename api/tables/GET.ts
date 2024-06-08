@@ -1,6 +1,6 @@
 import { Table } from "@/hooks/tables"
 
-const ENDPOINT = 'https://script.google.com/macros/s/AKfycbwMVKrS8lt_U1zWy9n3sqk7qrHB8g9cewAfqErJZnkQ5iz9eFUYLieX9kVhPKcj5US_Eg/exec'
+const ENDPOINT = 'https://script.google.com/macros/s/AKfycbzS2Pryw18ay0j1nLf63tbugD6RJju0m7-e1H9RclJQkq36Pfju6xWMDR0a4w2khHw/exec'
 
 export default async function getTables(): Promise<Table> {
   return await fetch(ENDPOINT)
