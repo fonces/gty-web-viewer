@@ -53,10 +53,10 @@ export default function Scores() {
                 <TableCell>
                   {score.name || '-'}
                 </TableCell>
-                <TableCell align="right">{score.score[0] || 0}</TableCell>
-                <TableCell align="right">{score.score[1] || 0}</TableCell>
-                <TableCell align="right">{score.score[2] || 0}</TableCell>
-                <TableCell align="right">{score.score[3] || 0}</TableCell>
+                <TableCell align="right">{(score.score[0] || 0).toFixed(1)}</TableCell>
+                <TableCell align="right">{(score.score[1] || 0).toFixed(1)}</TableCell>
+                <TableCell align="right">{(score.score[2] || 0).toFixed(1)}</TableCell>
+                <TableCell align="right">{(score.score[3] || 0).toFixed(1)}</TableCell>
                 <TableCell align="right">{score.summary.toFixed(1)}</TableCell>
                 <TableCell align="right">{index + 1}</TableCell>
               </TableRow>
