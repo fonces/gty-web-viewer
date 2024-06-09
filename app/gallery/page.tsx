@@ -12,7 +12,7 @@ const styles = {
 }
 
 const images = [
-  ...Array(26).fill(null).map((_, index) => ({
+  ...Array(42).fill(null).map((_, index) => ({
     src: `/gty-web-viewer/img/${index + 1}.jpeg`,
     alt: `画像${index + 1}`,
   })),
