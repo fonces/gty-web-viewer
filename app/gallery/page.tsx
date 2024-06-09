@@ -13,13 +13,9 @@ const styles = {
 
 const images = [
   ...Array(12).fill(null).map((_, index) => ({
-    src: `${process.env.NEXT_PUBLIC_BASE_PATH || ''}/img/${index + 1}.jpeg`,
+    src: `/gty-web-viewer/img/${index + 1}.jpeg`,
     alt: `画像${index + 1}`,
   })),
-  // {
-  //   src: `${process.env.NEXT_PUBLIC_BASE_PATH || ''}/img/test.png`,
-  //   alt: "Coming Soon...",
-  // },
 ];
 
 export default function Gallery() {
